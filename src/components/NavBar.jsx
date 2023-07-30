@@ -9,9 +9,9 @@ const NavBar = () => {
 
     return (
         <>
-            <Navbar bg="primary" variant="dark" expand="md">
+            <Navbar bg="warning" variant="light" expand="md">
                 <Container>
-                    <Navbar.Brand as={Link} to="/">Movies App</Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/">FCK Movies</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">

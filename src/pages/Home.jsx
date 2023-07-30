@@ -38,7 +38,7 @@ const Home = () => {
                     <h1>Movies</h1>
                     <Button
                         onClick={() => navigate("/movies/add")}
-                        variant="success"
+                        variant="warning"
                     >
                         Add movie
                     </Button>

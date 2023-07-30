@@ -13,36 +13,33 @@ import MovieForm from './pages/MovieForm'
 
 function App() {
 
-  const dispatch = useDispatch();
-  const isLoading = useSelector(state => state.app.isLoading);
+	const dispatch = useDispatch();
+	const isLoading = useSelector(state => state.app.isLoading);
 
-  useEffect(() => {
-    dispatch(getGenresThunk());
-    dispatch(getActorsThunk());
-    dispatch(getDirectorsThunk());
-    dispatch(getMoviesThunk());
-  }, [])
+	useEffect(() => {
+		dispatch(getGenresThunk());
+		dispatch(getActorsThunk());
+		dispatch(getDirectorsThunk());
+		dispatch(getMoviesThunk());
+	}, [])
 
-  return (
-    <HashRouter>
-      <div className="educational-purposes" >
-            Front-end made by Academlo instructors for educational purposes
-        </div>
-      <NavBar />
-      <Notification />
-      { isLoading && <LoadingScreen /> }
-      <Container className='my-5'>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/actors" element={<Actors />} />
-          <Route path="/directors" element={<Directors />} />
-          <Route path="/movies/:id" element={<MovieDetail />} />
-          <Route path="/movies/add" element={<MovieForm />} />
-          <Route path="/movies/update/:id" element={<MovieForm />} />
-        </Routes>
-      </Container>
-    </HashRouter>
-  )
+	return (
+		<HashRouter>
+			<NavBar />
+			<Notification />
+			{isLoading && <LoadingScreen />}
+			<Container className='my-5'>
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/actors" element={<Actors />} />
+					<Route path="/directors" element={<Directors />} />
+					<Route path="/movies/:id" element={<MovieDetail />} />
+					<Route path="/movies/add" element={<MovieForm />} />
+					<Route path="/movies/update/:id" element={<MovieForm />} />
+				</Routes>
+			</Container>
+		</HashRouter>
+	)
 }
 
 export default App
